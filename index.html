@@ -4,20 +4,30 @@
   <meta charset="utf-8">
   <title>World News</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
-    <link rel="stylesheet" href="https://bootswatch.com/cosmo/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+  <link rel="stylesheet" href="https://bootswatch.com/cosmo/bootstrap.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body ng-app="app">
-<div class="container" ng-controller="myCtrl">
+  <div ng-controller="myCtrl">
+  <nav class="container">
+    <section class="row">
+      <div class="col-md-4 text-center mdTxt">news     about      share</div>
+      <div class="col-md-4 text-center lgTxt">EVENTILE</div>
+      <div class="col-md-4 text-center mdTxt">contact      github      donate</div>
+    </section>
 
-<section class="row" ng-repeat="row in worldArray track by $index">
+  </nav>
+  <div class="container big-border">
+  <section class="row" ng-repeat="row in worldArray track by $index">
+      <article class="pic" ng-repeat="columns in row track by $index" ng-class="{ 'fill': isLand(columns) }" ng-click="getGrid()">
+      </article>
+    </section>
+    </div>
+  </div>
 
-<article class="pic" ng-repeat="columns in row track by $index" ng-class="{ 'fill': isLand(columns) }">
-</article>
-</section>
-
-</div>
+  </div>
 </body>
 <script type="text/javascript" src="app.js"></script>
 </html>
