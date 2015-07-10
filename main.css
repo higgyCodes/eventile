@@ -1,0 +1,33 @@
+.big-box {
+  margin: 10px;
+}
+
+.row {
+  display: flex;
+  margin: 1px;
+  padding: 0px;
+ }
+
+.pic {
+  height: 10px;
+  width: 2%;
+  margin-left: 1px;
+    border: 1px solid #2D75FF;
+}
+
+.fill {
+  background-color: #2D75FF;
+}
+
+.pic:hover {
+    background-color: #1B4699;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+img {
+  max-width: 100%;
+}
