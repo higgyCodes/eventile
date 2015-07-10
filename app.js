@@ -36,6 +36,10 @@ app.controller('myCtrl', ['$scope', function($scope){
 		}
 	};
 
-	
+	$scope.getGrid = function(parentIndex, index) {
+		$scope.gridSpace = (parentIndex * 50) + index + 1;
+
+		console.log($scope.gridSpace);
+	};
 
 }]);
