@@ -1,8 +1,24 @@
-@-webkit-keyframes pulse { 0% {background-color: #45CEEF;} 25% {background-color: #FFF5A5;} 50% {background-color: #FFD4DA;} 75% {background-color: #99D2E4;} 100% {background-color: #D8CAB4;} } body { background-color: #45CEEF; -webkit-animation: pulse 40s infinite alternate; }
+body * {
+  font-family: "Bree Serif", Arial;
+}
 
-/*body {
-  background: linear-gradient(to right, #2B1686 , #2B2DAB);
-}*/
+/*Gradient Background*/
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName { 
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
 
 .big-box {
   margin: 10px;
@@ -20,10 +36,23 @@
   padding: 0px;
  }
 
+
+/*tile size!!!!*/
 .pic {
   height: 15px;
   width: 2%;
   margin-left: 1px;
+}
+
+.pic-full {
+  position: fixed;
+
+  height: 60%;
+  width: 80%;
+  transition: all 2s ease-in-out;
+  top: 20%;
+  left: 10%;
+
 }
 
 .fill {
@@ -31,7 +60,7 @@
 }
 
 .pic:hover {
-    background-color: #1B4699;
+    background-color: #FFF;
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -ms-transition: all 1s ease;
@@ -53,6 +82,109 @@ nav {
 }
 
 .mdTxt {
-  font-size: 30px;
+  font-size: 20px;
   color: #FFF;
+}
+
+/*paralax scrolling*/
+
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+body { 
+  margin:0;
+  padding:0;
+  perspective: 1px;
+  transform-style: preserve-3d;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-family: Nunito;
+}
+
+
+p {
+  font-size: 140%;
+  color: #999;
+}
+
+.slide {
+  position: relative;
+  padding: 25vh 10%;
+  min-height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+  box-shadow: 0 -1px 10px rgba(0, 0, 0, .7);
+  transform-style: inherit;
+}
+
+
+.slide:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left:0;
+  right:0;
+}
+
+.slide:nth-child(2n) .title {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.slide:nth-child(2n+1) .title {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.slide, .slide:before {
+  background: 50% 50% / cover;  
+}
+
+.header {
+  text-align: center;
+  font-size: 175%;
+  color: #fff;
+  text-shadow: 0 2px 2px #000;
+}
+
+#title {
+  background-color: black;
+   background-attachment: fixed;  
+}
+
+#slide1:before {
+  /*background-image: url("http://lorempixel.com/output/abstract-q-c-640-480-4.jpg");*/
+  background: linear-gradient(270deg, #030651, #020428, #11021d, #390360, #2d0848);
+background-size: 1000% 1000%;
+
+-webkit-animation: AnimationName 50s ease infinite;
+-moz-animation: AnimationName 50s ease infinite;
+animation: AnimationName 50s ease infinite;
+  transform: translateZ(-1px) scale(2);
+  z-index:-1;
+}
+
+#slide2 {
+  background-image: url("/resources/city-lights.png");
+  background-attachment: fixed;
+}
+
+.invert {-webkit-filter: invert(60%);}
+
+/*.top-buffer { margin-top:175px }*/
+
+.container {
+  width: 100%;
+}
+
+.btn-on {
+  border: 1px solid black;
+}
+
+.btn-off {
+border: 1px solid white;
 }
