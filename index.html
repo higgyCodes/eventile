@@ -17,16 +17,16 @@
       <div class="col-md-4 text-center lgTxt">EVENTILE</div>
       <div class="col-md-4 text-center mdTxt">contact      github      donate</div>
     </section>
-
   </nav>
+
   <div class="container big-border">
   <section class="row" ng-repeat="row in worldArray track by $index">
       <article class="pic" ng-repeat="columns in row track by $index" ng-class="{ 'fill': isLand(columns) }" ng-click="getGrid($parent.$index, $index)">
       </article>
     </section>
     </div>
-  </div>
 
+  </div>
   </div>
 </body>
 <script type="text/javascript" src="app.js"></script>

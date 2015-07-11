@@ -1,15 +1,17 @@
-body {
-  background-color: #EEE;
-}
+@-webkit-keyframes pulse { 0% {background-color: #45CEEF;} 25% {background-color: #FFF5A5;} 50% {background-color: #FFD4DA;} 75% {background-color: #99D2E4;} 100% {background-color: #D8CAB4;} } body { background-color: #45CEEF; -webkit-animation: pulse 40s infinite alternate; }
+
+/*body {
+  background: linear-gradient(to right, #2B1686 , #2B2DAB);
+}*/
 
 .big-box {
   margin: 10px;
 }
 
 .big-border {
-    border-style: solid;
-    border-width: 20px;
-    background-color: #CCC;
+/*    border-style: solid;
+    border-width: 20px;*/
+      
 }
 
 .row {
@@ -19,13 +21,13 @@ body {
  }
 
 .pic {
-  height: 20px;
+  height: 15px;
   width: 2%;
   margin-left: 1px;
 }
 
 .fill {
-  background-color: #712E99;
+  background: rgba(230, 230, 230, .4);
 }
 
 .pic:hover {
@@ -47,8 +49,10 @@ nav {
 
 .lgTxt {
   font-size: 50px;
+  color: #FFF;
 }
 
 .mdTxt {
   font-size: 30px;
+  color: #FFF;
 }
