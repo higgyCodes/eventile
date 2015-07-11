@@ -38,8 +38,7 @@ app.controller('myCtrl', ['$scope', function($scope){
 			console.log(space.tog);
 		};
 
-}]);
+		$scope.article = {"title":"Euro zone ministers demand more from Greece for loan talks","link":"http://feeds.reuters.com/~r/Reuters/worldNews/~3/fig3ufnYvwA/story01.htm","author":"","publishedDate":"Sat, 11 Jul 2015 15:26:25 -0700","contentSnippet":"BRUSSELS (Reuters) - Skeptical euro zone finance ministers demanded on Saturday that Greece go beyond painful austerity ...","content":"BRUSSELS (Reuters) - Skeptical euro zone finance ministers demanded on Saturday that Greece go beyond painful austerity measures accepted by Prime Minister Alexis Tsipras if he wants them to open negotiations on a third bailout for his bankrupt country to keep it in the euro."};
 
-
-
+	}]);
 

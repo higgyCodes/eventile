@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://bootswatch.com/cosmo/bootstrap.min.css">
   <link href='http://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body ng-app="app">
@@ -20,17 +21,22 @@
       </section>
     </nav>
 
-    <div id="slide1" class="slide">
+    <div id="slide1" class="slide map-width">
       <section class="row" ng-repeat="row in worldArray track by $index">
       <article class="pic" ng-repeat="columns in row track by $index" ng-class="{ 'fill': isLand(columns.type), 'pic-full' : columns.tog}" ng-click="toggleBtn(columns)">
       <div ng-show="columns.tog" class="text-center">
-<h1>Title</h1>
-
-      click to close</div>
+<h1>{{article.title}}</h1>
+<h5>{{article.publishedDate}}</h5>
+<h4 class="text-left">{{article.content}}</h4>
+<br>
+<br>
+<br>
+      <div class="pull-down">click to close</div>
+      </div>
         </article>
       </section>
       <div class="text-center top-buffer">
-        <div class="container">
+        <div class="container pull-bottom">
           <br>
           <br>
           <br>
@@ -55,4 +61,5 @@
   </div>
 </body>
 <script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="feeds.js"></script>
 </html>

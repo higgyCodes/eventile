@@ -24,11 +24,6 @@ body * {
   margin: 10px;
 }
 
-.big-border {
-/*    border-style: solid;
-    border-width: 20px;*/
-      
-}
 
 .row {
   display: flex;
@@ -42,6 +37,11 @@ body * {
   height: 15px;
   width: 2%;
   margin-left: 1px;
+       -webkit-transition: all 1s ease-out;
+   -moz-transition: all 1s ease-out;
+   -o-transition: all 1s ease-out;
+   -ms-transition: all 1s ease-out;
+   transition: all 1s ease-out;
 }
 
 .pic-full {
@@ -49,7 +49,7 @@ body * {
 
   height: 60%;
   width: 80%;
-  transition: all 2s ease-in-out;
+  transition: all 1s ease-in-out;
   top: 20%;
   left: 10%;
 
@@ -61,11 +61,11 @@ body * {
 
 .pic:hover {
     background-color: #FFF;
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  transition: all 1s ease;
+     -webkit-transition: all 1s ease-out;
+   -moz-transition: all 1s ease-out;
+   -o-transition: all 1s ease-out;
+   -ms-transition: all 1s ease-out;
+   transition: all 1s ease-out;
 }
 
 img {
@@ -158,7 +158,7 @@ p {
 
 #slide1:before {
   /*background-image: url("http://lorempixel.com/output/abstract-q-c-640-480-4.jpg");*/
-  background: linear-gradient(270deg, #030651, #020428, #11021d, #390360, #2d0848);
+  background: linear-gradient(270deg, #030651, #020428, #11021d, #390360, #020428);
 background-size: 1000% 1000%;
 
 -webkit-animation: AnimationName 50s ease infinite;
@@ -171,6 +171,7 @@ animation: AnimationName 50s ease infinite;
 #slide2 {
   background-image: url("/resources/city-lights.png");
   background-attachment: fixed;
+  border: solid 2px black;
 }
 
 .invert {-webkit-filter: invert(60%);}
