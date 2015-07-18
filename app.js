@@ -26,7 +26,6 @@ app.controller('myCtrl', ['$scope', function($scope){
 		$scope.toggleBtn($scope.gridSpace);
 
 		// $scope.isClicked = function(bool) {
-
 		// 	console.log(bool + "tile");
 		// 	return bool;
 		// }
@@ -35,7 +34,8 @@ app.controller('myCtrl', ['$scope', function($scope){
 
 		$scope.toggleBtn = function(space) {
 			space.tog = !space.tog;
-			console.log(space.tog);
+			//console.log(space.tog);
+			$scope.getArticle();
 		};
 
 		$scope.article = {"title":"Euro zone ministers demand more from Greece for loan talks","link":"http://feeds.reuters.com/~r/Reuters/worldNews/~3/fig3ufnYvwA/story01.htm","author":"","publishedDate":"Sat, 11 Jul 2015 15:26:25 -0700","contentSnippet":"BRUSSELS (Reuters) - Skeptical euro zone finance ministers demanded on Saturday that Greece go beyond painful austerity ...","content":"BRUSSELS (Reuters) - Skeptical euro zone finance ministers demanded on Saturday that Greece go beyond painful austerity measures accepted by Prime Minister Alexis Tsipras if he wants them to open negotiations on a third bailout for his bankrupt country to keep it in the euro."};
@@ -50,34 +50,32 @@ app.factory('FeedLoader', function ($resource) {
 
 app.controller('FeedCtrl', function ($scope, $q, $http, FeedLoader) {
 		$scope.feeds = [];
-
+		$scope.finished = false;
 		var feedSources = {title: 'Reuters World', url: 'http://feeds.reuters.com/Reuters/worldNews'};
 
 		FeedLoader.fetch({q: feedSources.url, num: 10}, {}, function (data) {
 			$scope.feed = data.responseData.feed;
-			
-			console.log($scope.feed);
+			//console.log($scope.feed);
+
+				$scope.feeds.push($scope.feed);
+
+				console.log($scope.feeds);
+				$scope.entries = $scope.feeds[0].entries;
+
+				for (i = 0; i < $scope.entries.length; i ++) {
+				$scope.location = $scope.feeds[0].entries[i].content.split(" (")[0];
+				$scope.feeds[0].entries[i].content = $scope.feeds[0].entries[i].content.split("<br>")[0];
+
+					if ($scope.location.length < 20) {
+					$scope.feeds[0].entries[i].location = $scope.location;
+
+				} else {
+					$scope.feeds[0].entries[i].location = null
+				};
+
+
+				console.log($scope.feeds[0].entries[i].location);
+				$q.feeds = $scope.feeds
+				};
 			});
-
-		//$scope.feeds.push(feed);
-
-		// console.log($scope.feeds);
-		// $scope.entries = $scope.feeds[0].entries;
-
-		// for (i = 0; i < $scope.entries.length; i ++) {
-		// $scope.location = $scope.feeds[0].entries[i].content.split(" (")[0];
-		// $scope.feeds[0].entries[i].content = $scope.feeds[0].entries[i].content.split("<br>")[0];
-
-		// 	if ($scope.location.length < 20) {
-		// 	$scope.feeds[0].entries[i].location = $scope.location;
-
-		// } else {
-		// 	$scope.feeds[0].entries[i].location = null
-		// };
-
-
-		// console.log($scope.feeds[0].entries[i].location);
-		// $q.feeds = $scope.feeds
-		// };
-
 	});
